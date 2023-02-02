@@ -7,7 +7,8 @@ class BookingRepository {
     async create(data)
     {
         try {
-            
+          const booking = await Booking.create(data);
+          return booking;  
         } catch (error) {
             if(error.name=='SequeizeValidationError'){
                 throw new ValidationError(error);
@@ -20,6 +21,12 @@ class BookingRepository {
             );
         }
     }
+
+    async update(data)
+    {
+        
+    }
+
 
 }
 
